@@ -14,7 +14,7 @@
         <tbody>
             <% budgets.forEach(function(budgets) { %>
             <tr>
-                <td><%= budgets.createdBy %></td>
+                <td><%= budgets.createdBy.displayName %></td>
                 <td><%= budgets.title %></td>
                 <td><a href="/budgets/<%= budgets._id %>">Details</a></td>
             </tr>

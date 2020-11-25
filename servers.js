@@ -6,8 +6,6 @@ const passport = require('passport');
 const port = process.env.PORT || 3000;
 
 const indexRouter = require('./routes/index');
-// const usersRouter = require('./routes/users');
-// const accountsRouter = require('./routes/accounts');
 const budgetsRouter = require('./routes/budgets');
 
 require('dotenv').config();
@@ -40,8 +38,6 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-// app.use('/', usersRouter);
-// app.use('/accounts', accountsRouter);
 app.use('/budgets', budgetsRouter);
 
 app.listen(port, () => {

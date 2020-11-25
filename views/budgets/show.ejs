@@ -1,51 +1,42 @@
 <%- include('../partials/header') %> 
 
 <main>
-    <h3>Show Page</h3>
-    <form id="financial-form" action="/budgets" method="POST">
-        <h3 class="schema-labels">Income</h3>
-        <label id="form-label">Salary</label>
-        <input type="text" name="takeHome" class="finanical-input">
-        <label id="form-label">Additional Sources of Income</label>
-        <input type="text" name="additional1" class="finanical-input">
-        <input type="text" name="additional2" class="finanical-input">
-        <input type="text" name="additional3" class="finanical-input">
-        <h3 class="schema-labels">Expenses</h3>
-        <label id="form-label">Electric:</label>
+    <div>
+        <h3><%= budget.createdBy.displayName %> | Budget: <%= budget.title %></h3>
+        <h5>Income: <%= budget.incomeAmount %></h5>
+    </div>
+    <div>
+        <% if(budget.expense.length) { %>
+        <h6>Expenses:</h6>
+        <table>
+            <thead>
+                <tr>
+                    <th>Expense Type:</th>
+                    <th>Amount:</th>
+                    <th>Due:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% budget.expense.forEach(function(expense) { %>
+                    <tr>
+                        <td><%= expense.title %> </td>
+                        <td><%= expense.amount %> </td>
+                        <td><%= expense.dueDate %> </td>
+                    </tr>
+                <% }); %> 
+            </tbody>
+        </table>
+        <% } else { %> 
+        <h6>There are currently no expenses for this budget</h6>
+        <% }; %> 
+    </div>
+    <form id="financial-form" action="/budgets/<%= budget._id %>/expense" method="POST">
+        <h3 class="schema-labels">Add an expense</h3>
+        <label id="form-label">Type:</label>
         <input type="text" name="electric" class="finanical-input">
-        <label id="form-label">Gas:</label>
+        <label id="form-label">Amount:</label>
         <input type="text" name="gas" class="finanical-input">
-        <label id="form-label">Water:</label>
-        <input type="text" name="water" class="finanical-input">
-        <label id="form-label">Rent/Mortgage:</label>
-        <input type="text" name="rent" class="finanical-input">
-        <label id="form-label">Cable:</label>
-        <input type="text" name="cable" class="finanical-input">
-        <label id="form-label">Cell Phone:</label>
-        <input type="text" name="cell" class="finanical-input">
-        <label id="form-label">Car Payments:</label>
-        <input type="text" name="carPayment1" class="finanical-input">
-        <input type="text" name="carPayment2" class="finanical-input">
-        <label id="form-label">Insurance:</label>
-        <input type="text" name="insurance" class="finanical-input">
-        <label id="form-label">Medical:</label>
-        <input type="text" name="medical" class="finanical-input">
-        <label id="form-label">Loans:</label>
-        <input type="text" name="loans1" class="finanical-input">
-        <input type="text" name="loans2" class="finanical-input">
-        <label id="form-label">Credit Debt:</label>
-        <input type="text" name="creditCardDebt" class="finanical-input">
-        <label id="form-label">Other Debt or Expenses:</label>
-        <input type="text" name="otherDebt" class="finanical-input">
-        <h3 class="schema-labels">Savings</h3>
-        <label for="">What percentage would like to save each month?</label>
-        <div class="d-flex justify-content-center my-4">
-            <div class="w-75">
-              <input type="range" name="putBack" class="custom-range" id="customRange11" min="0" max="100">
-            </div>
-            <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
-        </div>
-        <input type="submit" value="Add Budget">
+        <input type="submit" value="Add Expense">
     </form>
 </main>
 
