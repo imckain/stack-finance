@@ -3,7 +3,9 @@ const router = express.Router();
 const budgetsCtrl = require('../controllers/budgets');
 const isAuthenticated = require('../utils/authorization');
 
-router.get('/accounts/:id/budgets/new', isAuthenticated, budgetsCtrl.new);
-router.post('/accounts/:id/budgets', isAuthenticated, budgetsCtrl.create);
+router.get('/', isAuthenticated, budgetsCtrl.index);
+router.get('/new', isAuthenticated, budgetsCtrl.new);
+router.post('/', isAuthenticated, budgetsCtrl.create);
+// router.get('/:id', isAuthenticated, budgetsCtrl.show);
 
 module.exports = router;

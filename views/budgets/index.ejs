@@ -1,0 +1,26 @@
+<%- include('../partials/header') %> 
+
+<main>
+    <h1>create a user</h1>
+    <a id="nav-button-user" href="/budgets/new"><i class="fas fa-users fa-lg"></i></a>
+    <h1>Users:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Budget:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% budgets.forEach(function(budgets) { %>
+            <tr>
+                <td><%= budgets.createdBy %></td>
+                <td><%= budgets.title %></td>
+                <td><a href="/budgets/<%= budgets._id %>">Details</a></td>
+            </tr>
+            <% }) %> 
+        </tbody>
+    </table>
+</main>
+
+<%- include('../partials/footer') %> 

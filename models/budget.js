@@ -31,10 +31,12 @@ const savingsSchema = new Schema({
 })
 
 const budgetSchema = new Schema({
+    // name: { type: String, required: true },
+    title: { type: String, required:true },
     income: [incomeSchema],
     expense: [expenseSchema],
     savings: [savingsSchema],
-    account: { type: Schema.Types.ObjectId, ref: 'Account' }
+    createdBy: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Budget', budgetSchema);
