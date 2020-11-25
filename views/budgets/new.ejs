@@ -1,0 +1,50 @@
+<%- include('../partials/header') %> 
+
+<main>
+    <form id="financial-form" action="/accounts" method="POST">
+        <h3 class="schema-labels">Income</h3>
+        <label id="form-label">Salary</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Additional Sources of Income</label>
+        <input type="text" class="finanical-input">
+        <input type="text" class="finanical-input">
+        <input type="text" class="finanical-input">
+        <h3 class="schema-labels">Expenses</h3>
+        <label id="form-label">Electric:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Gas:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Water:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Rent/Mortgage:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Cable:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Car Payments:</label>
+        <input type="text" class="finanical-input">
+        <input type="text" class="finanical-input">
+        <label id="form-label">Insurance:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Medical:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Loans:</label>
+        <input type="text" class="finanical-input">
+        <input type="text" class="finanical-input">
+        <label id="form-label">Credit Debt:</label>
+        <input type="text" class="finanical-input">
+        <label id="form-label">Other Debt or Expenses:</label>
+        <input type="text" class="finanical-input">
+        <input type="text" class="finanical-input">
+        <h3 class="schema-labels">Savings</h3>
+        <label for="">What percentage would like to save each month?</label>
+        <div class="d-flex justify-content-center my-4">
+            <div class="w-75">
+              <input type="range" class="custom-range" id="customRange11" min="0" max="100">
+            </div>
+            <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+        </div>
+        <input type="submit" value="Add Budget">
+    </form>
+</main>
+
+<%- include('../partials/footer') %> 

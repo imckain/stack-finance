@@ -1,8 +1,10 @@
-// const User = require('../models/user');
+module.exports = {
+    index,
+};
 
-// module.exports = {
-//     index,
-// };
+function index(req, res) {
+    res.render('index');
+}
 
 // function index(req, res) {
 //     console.log(req.user)
@@ -13,4 +15,3 @@
 //         });
 //     });
 // };
-
