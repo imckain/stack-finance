@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const expenseSchema = new Schema({
     title: { type: String, required: true },
     amount: { type: Number, default: 0 },
-    dueDate: { type: Date, required: true }
+    dueDate: { type: Date, required: true },
+    createdBy: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 const budgetSchema = new Schema({

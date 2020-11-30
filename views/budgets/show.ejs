@@ -1,8 +1,8 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 
 <main>
     <div>
-        <h3><%= budget.createdBy.displayName %> | Budget: <%= budget.title %></h3>
+        <h3><%= budget.createdBy.name %> | Budget: <%= budget.title %></h3>
         <h5>Income: <%= budget.incomeAmount %></h5>
     </div>
     <div>
@@ -22,20 +22,23 @@
                         <td><%= expense.title %> </td>
                         <td><%= expense.amount %> </td>
                         <td><%= expense.dueDate %> </td>
+                        <td><a href="/budgets/<%= expense._id %>/edit "><i class="far fa-edit fa-lg"></i></a></td>
                     </tr>
-                <% }); %> 
+                <% }); %>
             </tbody>
         </table>
-        <% } else { %> 
+        <% } else { %>
         <h6>There are currently no expenses for this budget</h6>
-        <% }; %> 
+        <% }; %>
     </div>
     <form id="financial-form" action="/budgets/<%= budget._id %>/expense" method="POST">
         <h3 class="schema-labels">Add an expense</h3>
         <label id="form-label">Type:</label>
-        <input type="text" name="electric" class="finanical-input">
+        <input type="text" name="title" class="finanical-input">
         <label id="form-label">Amount:</label>
-        <input type="text" name="gas" class="finanical-input">
+        <input type="text" name="amount" class="finanical-input">
+        <label id="form-label">Due:</label>
+        <input type="date" name="dueDate" class="finanical-input">
         <input type="submit" value="Add Expense">
     </form>
 </main>

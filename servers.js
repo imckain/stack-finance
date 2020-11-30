@@ -40,6 +40,12 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/budgets', budgetsRouter);
 
+app.get('/budgettestapi', (req, res) => {
+    Budget.find({}).populate('createdBy').exec(function(err, budgets) {
+        res.render('budgets/index', { title: 'Budgets', budgets });
+    });
+})
+
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
 });
