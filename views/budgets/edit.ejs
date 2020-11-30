@@ -3,7 +3,7 @@
 <main>
     <div>
         <h3>Edit: <%= expense.title %> </h3>
-        <form action="/budgets/<%= expense._id %>?_method=PUT" method="POST">
+        <form action="/expense/<%= expense._id %>?_method=PUT" method="POST">
         <label id="form-label">Type:</label>
         <input type="text" name="title" class="finanical-input">
         <label id="form-label">Amount:</label>

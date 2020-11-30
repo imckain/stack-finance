@@ -55,20 +55,41 @@ function addExpense(req, res) {
     });
 };
 
-function delExpense(req, res) {
-    Budget.deleteOne(req.params.id);
-    res.redirect('/budgets');
-};
+// function delExpense(req, res) {
+//     Budget.findOneAndDelete(req.params.id, function(err, budgets) {
+//         res.redirect('/budgets');
+//     });
+// };
 
 function edit(req, res) {
     Budget.findOne({'expense._id': req.params.id}, function(err, budget) {
+        // console.log(expense)
+        req.body.createdBy = req.user._id;
         const expense = budget.expense.id(req.params.id)
         res.render('budgets/edit', { expense })
     });
 };
 
 function update(req, res) {
-    Budget.updateOne(req.body, function(err, budget) {
-        res.redirect(`/budgets/${budget._id}`);
+    Budget.findOne({'expense._id': req.params.id}, function(err, budget) {
+        const expense = budget.expense.id(req.params.id)
+        expense.title = req.body.title;
+        expense.amount = req.body.amount;
+        expense.dueDate = req.body.dueDate;
+        budget.save(function(err) {
+            res.redirect(`/budgets/${budget._id}`);
+        });
+    });
+};
+
+function delExpense(req, res) {
+    Budget.findOne({'expense._id': req.params.id}, function(err, budget) {
+        const expense = budget.expense.id(req.params.id);
+        expense.remove();
+        budget.save(function(err) {
+            console.log(err)
+            console.log(expense)
+            res.redirect(`/budgets/${budget._id}`);
+        });
     });
 };
