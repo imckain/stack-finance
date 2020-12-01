@@ -14,7 +14,7 @@ This app will contiue to be updated for more functionality
 
 **Budget Page**
 <br><br>
-<img src="https://i.imgur.com/bzgwgtt.png" height="300">
+<img src="https://i.imgur.com/zdu3Pod.png" height="300">
 <br><br>
 
 **Budget Creation Page**
