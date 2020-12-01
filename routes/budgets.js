@@ -8,8 +8,8 @@ router.get('/new', isAuthenticated, budgetsCtrl.new);
 router.post('/', isAuthenticated, budgetsCtrl.create);
 router.get('/:id', isAuthenticated, budgetsCtrl.show);
 router.post('/:id/expense', isAuthenticated, budgetsCtrl.addExpense);
-router.delete('/expense/:id', isAuthenticated, budgetsCtrl.delete);
 router.get('/expense/:id/edit', isAuthenticated, budgetsCtrl.edit);
 router.put('/expense/:id', isAuthenticated, budgetsCtrl.update);
+router.delete('/expense/:id', isAuthenticated, budgetsCtrl.delete);
 
 module.exports = router;

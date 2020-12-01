@@ -1,11 +1,9 @@
 <footer id="main-footer">
     <nav id="main-nav">
         <% if(user) { %> 
-            <a id="nav-button" href=""><i class="far fa-calendar-alt fa-lg"></i></a>
-            <a id="nav-button" href="/budgets/show"><i class="fas fa-heartbeat fa-lg"></i></a>
-            <a id="nav-button" href="/budgets"><i class="far fa-compass fa-lg"></i></a>
-            <a id="nav-button" href=""><i class="fas fa-tasks fa-lg"></i></a>
-            <a id="nav-button" href=""><i class="far fa-user fa-lg"></i></a>
+            <a id="nav-button" href=""><i id="nav-img" class="far fa-calendar-alt fa-lg"></i></a>
+            <a id="nav-button" href="/budgets"><i id="nav-img" class="far fa-compass fa-lg"></i></a>
+            <a id="nav-button" href="/budgets/new"><i id="nav-img" class="fas fa-tasks fa-lg"></i></a>
         <% } else { %> 
             <a href="/auth/google"><img src="/imgs/btn_google_signin_dark_normal_web@2x.png" alt=""></a>
         <% } %> 

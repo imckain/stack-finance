@@ -1,13 +1,12 @@
 <%- include('../partials/header') %> 
 
 <main>
-    <h1>Start a budget</h1>
-    <a id="nav-button-user" href="/budgets/new"><i class="fas fa-users fa-lg"></i></a>
-    <table>
+    <table class="budget-table">
         <thead>
             <tr>
                 <th>Name:</th>
                 <th>Budget:</th>
+                <th>Discretionary:</th>
             </tr>
         </thead>
         <tbody>
@@ -15,10 +14,11 @@
             <tr>
                 <td><%= budgets.createdBy.name %></td>
                 <td><%= budgets.title %></td>
-                <td><a href="/budgets/<%= budgets._id %>">Details</a></td>
                 <td>
-                    
+                    <% let discretionary = (budgets.incomeAmount - budgets.expense.amount) %> 
+                    <%= discretionary %> 
                 </td>
+                <td><a href="/budgets/<%= budgets._id %>">Details</a></td>
             </tr>
             <% }) %> 
         </tbody>

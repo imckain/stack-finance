@@ -41,9 +41,13 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-top: 40vh;
+    margin-top: 30vh 30vh 0 0;
     justify-content: center;
     align-items: center;
+}
+
+#login-header {
+    margin-bottom: 70px;
 }
 
 #label {
@@ -92,8 +96,8 @@ main {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 50px;
-    justify-content: center;
+    height: 7vh;
+    justify-content: space-around;
     align-items: center;
     margin: 0;
 }
@@ -103,13 +107,13 @@ main {
     flex-direction: column;
     position: fixed;
     bottom: 0;
-    height: 50px;
+    height: 7vh;
     width: 100%;
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
     margin: 0;
-    box-shadow: 0px -3px 6px .5px rgba(0, 0, 0, 0.356), 0 -10px 10px -10px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0px -3px 6px .5px rgba(0, 0, 0, 0.356), 0 -10px 0 -10px rgba(0, 0, 0, 0.5) inset;
 }
 
 #footer {
@@ -121,8 +125,25 @@ main {
     justify-content: center;
     align-items: center;
     width: 20vw;
-    height: 50px;
+    height: 7vh;
     background-color: var(--main-color);
+    text-decoration: inherit;
+    color: var(--main-icon-color);
+    /* border-left: .3px solid var(--secondary-color);
+    border-right: .3px solid var(--secondary-color);
+    box-shadow: 0 0 0 0px #163772 inset,0 0 0 0px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #333797,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; */
+}
+
+#nav-button-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: 7vh;
+    padding: 10px;
+    background-color: none;
     text-decoration: inherit;
     color: inherit;
     /* border-left: .3px solid var(--secondary-color);
@@ -136,32 +157,14 @@ main {
     transform: scale(1.1);
 }
 
-#nav-button-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-    height: 50px;
-    background-color: var(--main-color);
-    text-decoration: inherit;
-    color: inherit;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.356);
-}
-
-#nav-button-user:hover {
-    transform: scale(1.1);
-}
-
 #nav-button-logout {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 20vw;
     height: 50px;
-    background-color: var(--main-color);
     text-decoration: inherit;
-    color: inherit;
+    color: var(--main-icon-color);
     border-radius: 8px;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.356);
 }
@@ -170,9 +173,29 @@ main {
     transform: scale(1.1);
 }
 
-i {
-    font-size: calc(16px + (24 - 16)*(100vw - 400px)/(800 - 400));
+#nav-button-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: 7vh;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+
+#nav-button-delete:hover {
+    transform: scale(1.1);
+}
+
+#nav-img {
+    font-size: calc(30px + (24 - 16)*(100vw - 400px)/(800 - 400));
     color: var(--main-icon-color);
+}
+
+#content-nav {
+    /* font-size: calc(30px + (24 - 16)*(100vw - 400px)/(800 - 400)); */
+    color: var(--secondary-color);
 }
 
 #compass-content {
@@ -199,20 +222,15 @@ i {
     width: 100%;
 }
 
-#chart {
-    margin-bottom: 7px;
-}
-
-.my-chart {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: 70vw;
-}
-
 #financial-form {
     display: flex;
     flex-direction: column;
+}
+
+.budget-table {
+    width: 90vw;
+}
+
+.budget-table, th {
+    padding: 0px;
 }

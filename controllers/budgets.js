@@ -77,6 +77,7 @@ function update(req, res) {
         expense.amount = req.body.amount;
         expense.dueDate = req.body.dueDate;
         budget.save(function(err) {
+            console.log(err)
             res.redirect(`/budgets/${budget._id}`);
         });
     });

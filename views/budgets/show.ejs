@@ -21,11 +21,11 @@
                     <tr>
                         <td><%= expense.title %> </td>
                         <td><%= expense.amount %> </td>
-                        <td><%= expense.dueDate %> </td>
-                        <td><a href="/budgets/expense/<%= expense._id %>/edit"><i class="far fa-edit fa-lg"></i></a></td>
+                        <td><%= expense.dueDate.toLocaleDateString() %> </td>
+                        <td><a id="nav-button-edit" href="/budgets/expense/<%= expense._id %>/edit"><i id="content-nav" class="far fa-edit fa-lg"></i></a></td>
                         <td>
-                            <form action="/expense/<%= expense._id %>?_method=DELETE" method="POST">
-                                <button type="submit"><i class="far fa-trash-alt"></i></button>
+                            <form action="/budgets/expense/<%= expense._id %>?_method=DELETE" method="POST">
+                                <button id="nav-button-delete" type="submit"><i id="content-nav" class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
                     </tr>

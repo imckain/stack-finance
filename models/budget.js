@@ -10,7 +10,6 @@ const expenseSchema = new Schema({
 
 const budgetSchema = new Schema({
     title: { type: String, required:true },
-    incomeSource: { type: String, required: true },
     incomeAmount: { type: Number, required: true },
     expense: [expenseSchema],
     createdBy: { type: Schema.Types.ObjectId, ref: 'User' }
