@@ -8,7 +8,8 @@ This app will contiue to be updated for more functionality
 # Screenshots 
 
 **Welcome Page and Google Sign-in**
-![image](https://i.imgur.com/Gs7OnlQ.png =250x)
+<img src="https://i.imgur.com/Gs7OnlQ.png" align="left" height="50" width="50">
+<!-- ![image](https://i.imgur.com/Gs7OnlQ.png)
 **Budget Page**
 ![image](https://i.imgur.com/UMsV5iR.png)
 **Budget Creation Page**
@@ -16,5 +17,5 @@ This app will contiue to be updated for more functionality
 **Budget Detail Page**
 ![image](https://i.imgur.com/bzgwgtt.png)
 **Edit Expense Page**
-![image](https://i.imgur.com/2mUC7cF.png)
+![image](https://i.imgur.com/2mUC7cF.png) -->
 
