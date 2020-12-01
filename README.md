@@ -8,6 +8,7 @@ This app will contiue to be updated for more functionality
 # Screenshots 
 
 **Welcome Page and Google Sign-in**
+<br>
 <img src="https://i.imgur.com/Gs7OnlQ.png" align="left" height="50" width="50">
 <!-- ![image](https://i.imgur.com/Gs7OnlQ.png)
 **Budget Page**
