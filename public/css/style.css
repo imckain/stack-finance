@@ -195,7 +195,7 @@ main {
 
 #content-nav {
     /* font-size: calc(30px + (24 - 16)*(100vw - 400px)/(800 - 400)); */
-    color: var(--secondary-color);
+    color: var(--main-icon-color);
 }
 
 #compass-content {
