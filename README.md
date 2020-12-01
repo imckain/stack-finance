@@ -9,7 +9,7 @@ This app will contiue to be updated for more functionality
 
 **Welcome Page and Google Sign-in**
 <br>
-<img src="https://i.imgur.com/Gs7OnlQ.png" align="left" height="50" width="50">
+<img src="https://i.imgur.com/Gs7OnlQ.png" align="left" height="150">
 <!-- ![image](https://i.imgur.com/Gs7OnlQ.png)
 **Budget Page**
 ![image](https://i.imgur.com/UMsV5iR.png)
