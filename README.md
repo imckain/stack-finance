@@ -32,3 +32,26 @@ This app will contiue to be updated for more functionality
 <img src="https://i.imgur.com/2mUC7cF.png" height="300">
 <br><br>
 
+---
+
+# Technologies Used
+
+* HTML/CSS/JavaScript
+* Node.js
+* express
+* MongoDB
+* Mongoose
+* Passport
+* Google OAuth
+
+---
+
+# Check it out [here](https://stack-finance-webapp.herokuapp.com/)
+
+---
+
+# Future enhancements:
+
+* compare income to expenses to manage savings potential
+* track expense due dates through google calendar
+* add additional information to give you a better view of your finanical health
