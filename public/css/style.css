@@ -126,7 +126,7 @@ main {
     align-items: center;
     width: 20vw;
     height: 7vh;
-    background-color: var(--main-color);
+    background: none;
     text-decoration: inherit;
     color: var(--main-icon-color);
 }
