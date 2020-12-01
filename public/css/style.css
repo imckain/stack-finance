@@ -237,6 +237,10 @@ div {
     margin: 40px;
 }
 
+#form-button:hover {
+    transform: scale(1.1);
+}
+
 #form-row {
     width: 60vw;
 }
