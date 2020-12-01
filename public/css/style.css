@@ -129,11 +129,6 @@ main {
     background-color: var(--main-color);
     text-decoration: inherit;
     color: var(--main-icon-color);
-    /* border-left: .3px solid var(--secondary-color);
-    border-right: .3px solid var(--secondary-color);
-    box-shadow: 0 0 0 0px #163772 inset,0 0 0 0px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #333797,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px; */
 }
 
 #nav-button-edit {
@@ -141,16 +136,15 @@ main {
     justify-content: center;
     align-items: center;
     width: max-content;
-    height: 7vh;
     padding: 10px;
-    background-color: none;
-    text-decoration: inherit;
-    color: inherit;
-    /* border-left: .3px solid var(--secondary-color);
-    border-right: .3px solid var(--secondary-color);
-    box-shadow: 0 0 0 0px #163772 inset,0 0 0 0px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #333797,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px; */
+    height: 7vh;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+
+#nav-button-edit:hover {
+    transform: scale(1.1);
 }
 
 #nav-button:hover {
@@ -195,18 +189,10 @@ main {
 
 #content-nav {
     /* font-size: calc(30px + (24 - 16)*(100vw - 400px)/(800 - 400)); */
-    color: var(--main-icon-color);
+    color: var(--main-color);
 }
 
-#compass-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-#compass-content, div {
+div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,17 +200,45 @@ main {
     width: 80vw;
 }
 
-#information-content {
+#financial-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin-top: 50px;
 }
 
-#financial-form {
+#form-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+#form-label {
+    flex-grow: 2;
+}
+
+.finanical-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: var(--main-color);
+    width: 27vw;
+}
+
+#form-button {
+    border-radius: 10px;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--main-font-color);
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.356);
+    width: max-content;
+    margin: 40px;
+}
+
+#form-row {
+    width: 60vw;
 }
 
 .budget-table {

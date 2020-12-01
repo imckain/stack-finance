@@ -1,14 +1,20 @@
 <%- include('../partials/header') %> 
 
 <main>
-    <form id="financial-form" action="/budgets" method="POST">
-        <h3 class="schema-labels">Income</h3>
-        <label id="form-label">Please enter the name of this budget</label>
-        <input type="text" name="title" class="finanical-input">
-        <label id="form-label">Amount:</label>
-        <input type="text" name="incomeAmount" class="finanical-input">
-        <input type="submit" value="Add Budget">
-    </form>
+    <div id="form-container">
+        <form id="financial-form" action="/budgets" method="POST">
+            <h3 class="schema-labels">Create a Budget</h3>
+            <div id="form-row">
+                <label id="form-label">Budget Type:</label>
+                <input type="text" name="title" class="finanical-input">
+            </div>
+            <div id="form-row">
+                <label id="form-label">Income:</label>
+                <input type="text" name="incomeAmount" class="finanical-input">
+            </div>
+            <input id="form-button" type="submit" value="Add Budget">
+        </form>
+    </div>
 </main>
 
 <%- include('../partials/footer') %> 

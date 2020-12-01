@@ -8,10 +8,10 @@
     <div>
         <% if(budget.expense.length) { %>
         <h6>Expenses:</h6>
-        <table>
+        <table class="budget-table">
             <thead>
                 <tr>
-                    <th>Expense Type:</th>
+                    <th>Type:</th>
                     <th>Amount:</th>
                     <th>Due:</th>
                 </tr>
@@ -22,7 +22,8 @@
                         <td><%= expense.title %> </td>
                         <td><%= expense.amount %> </td>
                         <td><%= expense.dueDate.toLocaleDateString() %> </td>
-                        <td><a id="nav-button-edit" href="/budgets/expense/<%= expense._id %>/edit"><i id="content-nav" class="far fa-edit fa-lg"></i></a></td>
+                        <td><button id="nav-button-edit"><a id="nav-button-edit" href="/budgets/expense/<%= expense._id %>/edit"><i id="content-nav" class="far fa-edit"></i></a></button></td>
+                            
                         <td>
                             <form action="/budgets/expense/<%= expense._id %>?_method=DELETE" method="POST">
                                 <button id="nav-button-delete" type="submit"><i id="content-nav" class="far fa-trash-alt"></i></button>
@@ -36,16 +37,24 @@
         <h6>There are currently no expenses for this budget</h6>
         <% }; %>
     </div>
-    <form id="financial-form" action="/budgets/<%= budget._id %>/expense" method="POST">
-        <h3 class="schema-labels">Add an expense</h3>
-        <label id="form-label">Type:</label>
-        <input type="text" name="title" class="finanical-input">
-        <label id="form-label">Amount:</label>
-        <input type="text" name="amount" class="finanical-input">
-        <label id="form-label">Due:</label>
-        <input type="date" name="dueDate" class="finanical-input">
-        <input type="submit" value="Add Expense">
-    </form>
+    <div id="form-container">
+        <form id="financial-form" action="/budgets/<%= budget._id %>/expense" method="POST">
+            <h5 class="schema-labels">Add an expense</h5>
+            <div id="form-row">
+                <label id="form-label">Type:</label>
+                <input type="text" name="title" class="finanical-input">
+            </div>
+            <div id="form-row">
+                <label id="form-label">Amount:</label>
+                <input type="text" name="amount" class="finanical-input">
+            </div>
+            <div id="form-row">
+                <label id="form-label">Due:</label>
+                <input type="date" name="dueDate" class="finanical-input">
+            </div>
+            <input id="form-button" type="submit" value="Add Expense">
+        </form>
+    </div>
 </main>
 
 <%- include('../partials/footer') %> 

@@ -1,28 +1,33 @@
 <%- include('../partials/header') %> 
 
 <main>
-    <table class="budget-table">
-        <thead>
-            <tr>
-                <th>Name:</th>
-                <th>Budget:</th>
-                <th>Discretionary:</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% budgets.forEach(function(budgets) { %>
-            <tr>
-                <td><%= budgets.createdBy.name %></td>
-                <td><%= budgets.title %></td>
-                <td>
-                    <% let discretionary = (budgets.incomeAmount - budgets.expense.amount) %> 
-                    <%= discretionary %> 
-                </td>
-                <td><a href="/budgets/<%= budgets._id %>">Details</a></td>
-            </tr>
-            <% }) %> 
-        </tbody>
-    </table>
+    <% if(budgets.length) { %> 
+        <table class="budget-table">
+            <thead>
+                <tr>
+                    <th>Name:</th>
+                    <th>Budget:</th>
+                    <!-- <th>Discretionary:</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <% budgets.forEach(function(budgets) { %>
+                <tr>
+                    <td><%= budgets.createdBy.name %></td>
+                    <td><%= budgets.title %></td>
+                    <!-- <td>
+                        <% let discretionary = (budgets.incomeAmount - budgets.expense.amount) %> 
+                        <% discretionary %> 
+                    </td> -->
+                    <td><a href="/budgets/<%= budgets._id %>">Details</a></td>
+                </tr>
+                <% }) %> 
+            </tbody>
+        </table>
+    <% } else { %> 
+        <h4>There are currently no budgets</h4>
+        <h6>Please create a budget</h6>
+    <% }; %> 
 </main>
 
 <%- include('../partials/footer') %> 
