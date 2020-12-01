@@ -1,5 +1,5 @@
 const Budget = require('../models/budget');
-const User = require('../models/user')
+const User = require('../models/user');
 
 module.exports = {
     index,
@@ -49,7 +49,6 @@ function addExpense(req, res) {
 
 function edit(req, res) {
     Budget.findOne({'expense._id': req.params.id}, function(err, budget) {
-        // console.log(expense)
         req.body.createdBy = req.user._id;
         const expense = budget.expense.id(req.params.id)
         res.render('budgets/edit', { expense })
