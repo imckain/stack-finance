@@ -62,7 +62,7 @@ main {
     position: fixed;
     top: 0;
     background-color: var(--main-color);
-    height: 60px;
+    height: 8vh;
     width: 100%;
     justify-content: space-around;
     align-items: center;
