@@ -28,19 +28,11 @@ function create(req, res) {
     Budget.create(req.body, function(err, budget) {
         res.redirect('/budgets');
     });
-    // const budget = new Budget(req.body);
-    // budget.save(function(err) {
-    //     if (err) return res.redirect('/budgets/new');
-    //     res.redirect(`/budgets`);
-    // });
 };
 
 function show(req, res) {
     Budget.findById(req.params.id)
     .populate('createdBy').exec(function(err, budget) {
-        // Budget.find({ budget: budget._id }).populate('budget').exec(function(err, budget) {
-        //         // console.log(budget);
-        //     });
             res.render('budgets/show', { title: 'Budget Detail', budget });
     });
 };
@@ -54,12 +46,6 @@ function addExpense(req, res) {
         });
     });
 };
-
-// function delExpense(req, res) {
-//     Budget.findOneAndDelete(req.params.id, function(err, budgets) {
-//         res.redirect('/budgets');
-//     });
-// };
 
 function edit(req, res) {
     Budget.findOne({'expense._id': req.params.id}, function(err, budget) {

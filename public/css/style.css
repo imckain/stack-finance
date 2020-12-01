@@ -73,7 +73,6 @@ main {
 #logo-div {
     display: flex;
     flex-direction: row;
-    /* flex-grow: 4; */
 }
 
 #logo {
@@ -188,7 +187,6 @@ main {
 }
 
 #content-nav {
-    /* font-size: calc(30px + (24 - 16)*(100vw - 400px)/(800 - 400)); */
     color: var(--main-color);
 }
 
