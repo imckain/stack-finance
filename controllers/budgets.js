@@ -50,19 +50,19 @@ function addExpense(req, res) {
 function edit(req, res) {
     Budget.findOne({'expense._id': req.params.id}, function(err, budget) {
         req.body.createdBy = req.user._id;
-        const expense = budget.expense.id(req.params.id)
-        res.render('budgets/edit', { expense })
+        const expense = budget.expense.id(req.params.id);
+        res.render('budgets/edit', { expense });
     });
 };
 
 function update(req, res) {
     Budget.findOne({'expense._id': req.params.id}, function(err, budget) {
-        const expense = budget.expense.id(req.params.id)
+        const expense = budget.expense.id(req.params.id);
         expense.title = req.body.title;
         expense.amount = req.body.amount;
         expense.dueDate = req.body.dueDate;
         budget.save(function(err) {
-            console.log(err)
+            console.log(err);
             res.redirect(`/budgets/${budget._id}`);
         });
     });
@@ -73,8 +73,8 @@ function delExpense(req, res) {
         const expense = budget.expense.id(req.params.id);
         expense.remove();
         budget.save(function(err) {
-            console.log(err)
-            console.log(expense)
+            console.log(err);
+            console.log(expense);
             res.redirect(`/budgets/${budget._id}`);
         });
     });
